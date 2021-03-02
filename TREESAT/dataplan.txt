@@ -1,0 +1,9 @@
+1) by hand [10 points]
+2) naive brute force [10 points]
+3) N=15 M=big only type 1, edge weights = 1 10 pts]
+4) N=15 M=big, only type 1 constraints  (connected component dp) [10 points]
+5) Only type 1 constraints N=1000, M = 10000 
+6) Only type 2 constraints, N=1000, M = 10000 AND edge weights = 1
+7) edge weights = 1 (mixed)
+8) Only type 2 constraints
+9,10) complete random N=1000, M =10000
