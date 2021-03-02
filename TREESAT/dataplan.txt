@@ -1,4 +1,4 @@
-1) by hand [10 points]
+1) no edge constraints [10 points]
 2) naive brute force [10 points]
 3) N=15 M=big only type 1, edge weights = 1 10 pts]
 4) N=15 M=big, only type 1 constraints  (connected component dp) [10 points]
