@@ -1,9 +1,24 @@
 1) no edge constraints [10 points]
-2) naive brute force [10 points]
-3) N=15 M=big only type 1, edge weights = 1 10 pts]
-4) N=15 M=big, only type 1 constraints  (connected component dp) [10 points]
-5) Only type 1 constraints N=1000, M = 10000 
-6) Only type 2 constraints, N=1000, M = 10000 AND edge weights = 1
-7) edge weights = 1 (mixed)
-8) Only type 2 constraints
-9,10) complete random N=1000, M =10000
+2) N=8 M=20 naive brute force [10 points]
+3) N=15 M=1000 only type 1, edge weights = 1 [10 pts]
+4) N=15 M=1000, only type 1 constraints (connected component dp) [10 points]
+5) Only type 1 constraints, line with intervals
+6) 20 spanning trees
+7) edge weights = 1, 200 node-cliques of various sizes (mixed)
+8) 20 spanning trees and few rogue components
+9) 99 spanning trees and few rogue components
+10) Test case 1 except constraints dont affect the answer
+
+Solutions:
+
+1. MST naive
+2. MST no edge left behind
+3. Brute force
+4. CC DP
+
+Solutions to test:
+
+- Beamsearch
+- SA
+- Random edge garbage (take an edge, figure out which edges it connects to, greedy)
+- Actual greedy
