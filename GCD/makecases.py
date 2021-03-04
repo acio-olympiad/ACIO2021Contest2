@@ -29,14 +29,14 @@ def SB5():
         addcase(10**5, 1+(i%3),5)
 
 def make():
-    os.system("g++ tkgen.cpp -O2 -o tkgen")
+    os.system("g++ tkgen.cpp -O2 -o Tkgen")
     SB_COUNT=[0]*6
     for i in Cases:
         l=open("tmp.txt",'w')
         l.write("{} {} {}".format(i[0],i[1],i[2]))
         l.close()
         print("Generating",i)
-        os.system("./tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[2]),str(SB_COUNT[i[2]])))
+        os.system(".\Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[2]),str(SB_COUNT[i[2]])))
         SB_COUNT[i[2]]+=1
 SB1()
 SB2()
