@@ -40,6 +40,7 @@ int main() {
         else {printf("\n");}
     }
     for (int i=0; i<q; i++) {
-        printf("%d %d\n",rand()%n, gen(t));
+        printf("%d %d",rand()%n, gen(t));
+        if (i+1 != q) {printf("\n");}
     }
 }

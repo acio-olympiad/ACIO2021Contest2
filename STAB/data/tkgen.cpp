@@ -50,7 +50,8 @@ int main() {
     for (int i=1; i<=l; i++) {
         for (int j=1; j <= n; j++) {
             int x = rng(lo,hi),y=rng(lo,hi), p=rng(1,MAXP);
-            printf("%d %d %d\n",min(x,y), max(x,y),p);
+            printf("%d %d %d",min(x,y), max(x,y),p);
+            if (i < l || j < n) {printf("\n");}
         }
         lo += a, hi += a;
     }
