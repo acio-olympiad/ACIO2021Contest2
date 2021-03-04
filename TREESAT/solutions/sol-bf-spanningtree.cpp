@@ -37,8 +37,8 @@ int ask() {
     }
     // Check K contstraints
     for (int i = 0; i < K; i++) {
-        if (t[i] == 1 && (use[a[i]-1] != use[b[i]-1])) rip = 1;
-        if (t[i] == 2 && use[a[i]-1] && use[b[i]-1]) rip = 1;
+        if (t[i] == 1 && (use[a[i] - 1] != use[b[i] - 1])) rip = 1;
+        if (t[i] == 2 && (use[a[i] - 1] == use[b[i] - 1])) rip = 1;
     }
     // Reset UF
     if (rip) return -1;
@@ -54,7 +54,6 @@ int main() {
     for (int i = 0; i < K; i++) {
         scanf("%d %d %d", t+i, a+i, b+i);
     }
-    assert(M < 30);
 
     // End boilerplate
     // So we basically ignore K and get on with our lives
@@ -63,16 +62,17 @@ int main() {
     for (int i = 0; i < N-1; i++) {
         use[M-1-i] = 1;
     }
-    int S = 1;
     do {
-        for (int i = 0; i < M; i++) use[i] = 1 & (S >> i);
         int res = ask();
         if (res >= 0 && res < ans) {
             selected.clear();
             ans = res;
-            for (int i = 1; i <= M; i++) if (use[i-1]) selected.push_back(i);
+            
+            for (int i = 1; i <= M; i++) {
+                if (use[i-1]) selected.push_back(i);
+            }
         }
-    } while (++S < (1 << M));
+    } while (next_permutation(use, use+M));
 
     fprintf(stderr, "%d\n", ans);
     printf("%d\n", selected.size());
