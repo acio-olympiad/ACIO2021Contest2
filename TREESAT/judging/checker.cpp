@@ -1,3 +1,6 @@
+#define CMS
+// NOTE: Please ONLY use the testlib.h that is provided with the checker.
+// Modifications have been made to it such that it will not break on invalid output.
 #include "testlib.h"
 #include <algorithm>
 #include <cmath>
@@ -10,7 +13,7 @@ using namespace std;
 int uf[MAXN];
 int N, M, K, edges;
 long long X;
-float P;
+double P;
 int edge[MAXM];
 int u[MAXM], v[MAXM], w[MAXM], use[MAXM];
 int t[MAXK], a[MAXK], b[MAXK];
@@ -25,7 +28,7 @@ int main(int argc, char **argv) {
     K = inf.readInt();
     edges = ans.readInt();
     X = ouf.readLong();
-    P = (float)ouf.readDouble();
+    P = ouf.readDouble();
     for (int i = 1; i <= N; i++) {
         uf[i] = i;
     }
@@ -70,10 +73,10 @@ int main(int argc, char **argv) {
         }
     }
 
-    float prop = weight_sum / (float)X;
+    double prop = (double)weight_sum / (double)X;
 
-    float points = min(1.0f, 0.3f + 0.7f * expf(1.25f * (prop-1) / (1-P)));
-    if (fabsf(1.0f - points) < 0.001f) {
+    double points = min(1.0, 0.3 + 0.7 * exp(1.25 * (prop-1) / (1-P)));
+    if (fabs(1.0 - points) < 0.0001f) {
         quitf(_ok, "Accepted");
     } else {
         quitp(points, "Accepted");

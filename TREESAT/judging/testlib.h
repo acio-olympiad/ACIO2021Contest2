@@ -2529,8 +2529,9 @@ NORETURN void InStream::quit(TResult result, const char* msg)
         std::fprintf(stdout, "%.3f\n", score);
         std::fprintf(stderr, CMS_MSG(CMS_PARTIAL, "Partial Score"));
     } else if (result == _fail) {
+        std::fprintf(stdout, "0.0\n");
         std::fprintf(stderr, "FAIL %s\n", msg);
-        halt(1);
+        halt(0);
     } else {
         std::fprintf(stderr, "FAIL unknown result %d\n", (int)result);
         halt(1);
@@ -4156,13 +4157,8 @@ void registerTestlibCmd(int argc, char* argv[])
     }
 
     inf.init(argv[1], _input);
-#ifdef CMS
-    ouf.init(argv[3], _output);
-    ans.init(argv[2], _answer);
-#else
     ouf.init(argv[2], _output);
     ans.init(argv[3], _answer);
-#endif
 }
 
 void registerTestlib(int argc, ...)
