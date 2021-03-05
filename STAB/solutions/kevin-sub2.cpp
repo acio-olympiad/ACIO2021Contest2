@@ -76,7 +76,6 @@ int main() {
     crits.push_back(1);
     auto best = dp(1e9, K);
     cout << best.first << "\n";
-<<<<<<< HEAD
     multiset<long long int> stabbies;
     while(K) {
         stabbies.insert(best.second);
@@ -87,14 +86,5 @@ int main() {
     for(long long int x: stabbies) {
         cout << x << " ";
     }
-
-=======
-    set<int> ord;
-    while(K) {
-        ord.insert(best.second);
-        best = cache[{best.second-1, --K}];
-    }
-    for (int x : ord) cout << x << " ";
->>>>>>> 53a5e2ac73ef8cee837603501b44977821a2f360
     cout << "\n";
 }
