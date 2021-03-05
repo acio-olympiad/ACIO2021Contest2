@@ -44,7 +44,7 @@ def SB1():
     #min case
     addcase(1,1,69,1,1,1)
 
-    MAXN = 10**5
+    MAXN = 5 * 10**4
     #random cases
     for i in range(6):
         x = random.randint(300,600)
@@ -65,7 +65,7 @@ def SB3():
 
 def SB4():
     #K = 1
-    MAXN = 10**5
+    MAXN = 5 * 10**4
     for i in range(3):
         #1 group
         addcase(MAXN, 10**9, 69, 1, 1,4)
@@ -82,7 +82,7 @@ def SB4():
 
 def SB5():
     #K = 2
-    MAXN = 10**5
+    MAXN = 5 * 10**4
     for i in range(3):
         #1 group
         addcase(MAXN, 10**9, 69, 1, 2,5)
@@ -98,7 +98,7 @@ def SB5():
         addcase(MAXN//grp, 10**5, 10**5+1, grp, 2,5)
 
 def SB6():
-    MAXN = 10**5
+    MAXN = 5 * 10**4
     k = 10**5 #size of one group
     for i in range(5):
         for gtype in [0,1]: #0 means medium number of groups, 1 means large
