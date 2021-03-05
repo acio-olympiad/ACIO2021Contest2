@@ -58,7 +58,7 @@ pair<long long int, long long int> dp(long long int curN, long long int curK) {
             best = max(best, cur);
         }
         cache[{curN, curK}] = best;
-        cerr << "We're at " << curN << " " << curK << " = " << best.first << " " << best.second << "\n";
+        //cerr << "We're at " << curN << " " << curK << " = " << best.first << " " << best.second << "\n";
     }
 
     return cache[{curN, curK}];
