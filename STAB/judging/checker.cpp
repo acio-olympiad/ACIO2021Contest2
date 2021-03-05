@@ -1,3 +1,4 @@
+#define CMS
 // NOTE: Please ONLY use the testlib.h that is provided with the checker.
 // Modifications have been made to it such that it will not break on invalid output.
 #include "testlib.h"
