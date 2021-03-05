@@ -15,19 +15,13 @@ int main(int argc, char * argv[])
 
     //read input file
     int N = inf.readInt();
-    inf.readSpace();
     int K = inf.readInt();
-    inf.readEoln();
     for (int i=1; i<=N; i++) {
         int l = inf.readInt();
-        inf.readSpace();
         int r = inf.readInt();
-        inf.readSpace();
         int p = inf.readInt();
         S[i][0] = l, S[i][1] = r, S[i][2] = p;
-        if (i != N) {inf.readEoln();}
     }
-    inf.readEof();
 
     LL j_value = ans.readLong();
 
