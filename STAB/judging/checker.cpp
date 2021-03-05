@@ -1,6 +1,7 @@
 #include "testlib.h"
 #define MAXN 200005
 #define LL long long
+using namespace std;
 int N,K,S[MAXN][3], Stabs[105];
 const int MAXV = 1e9;
 set <int> Stabset;
@@ -30,7 +31,7 @@ int main(int argc, char * argv[])
     LL p_value = ouf.readInt();
 
     if (j_value != p_value) {
-        quitf(_wa, "expected %d, found %d", ja, pa);
+        quitf(_wa, "expected %d, found %d", j_value, p_value);
     }
 
     //checkers ignore spaces
@@ -47,13 +48,12 @@ int main(int argc, char * argv[])
         if (Stabset.lower_bound(S[i][0]) == Stabset.end()) {
             continue;
         }
-        int v = *Stabset.lower_bound(S[i][0]);
-        if (v <= S[i][1]) {sum += S[i][2];}
+        auto v = Stabset.lower_bound(S[i][0]);
+        if (v != Stabset.end() && (*v) <= S[i][1]) {sum += S[i][2];}
     }
-
     if (sum != j_value) {
-        quitf(_wa, "construction invalid, value %lld rather than %lld",sum,ja)
+        quitf(_wa, "construction invalid, value %lld rather than %lld",sum,j_value);
     }
     //checker
-    quitf(_ok, "answer is %lld", ja);
+    quitf(_ok, "answer is %lld", j_value);
 }
