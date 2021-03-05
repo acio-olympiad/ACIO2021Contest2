@@ -26,6 +26,8 @@ int main(int argc, char * argv[])
     LL j_value = ans.readLong();
 
     LL p_value = ouf.readLong();
+    // Discard the output file contents
+    for (int i = 1; i <= K; i++) ouf.readInt();
 
     //if (j_value != p_value) {
     //    quitf(_wa, "expected %lld, found %lld", p_value, j_value);
