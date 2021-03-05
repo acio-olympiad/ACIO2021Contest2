@@ -1,4 +1,3 @@
-#define CMS
 // NOTE: Please ONLY use the testlib.h that is provided with the checker.
 // Modifications have been made to it such that it will not break on invalid output.
 #include "testlib.h"
@@ -26,6 +25,8 @@ int main(int argc, char * argv[])
     LL j_value = ans.readLong();
 
     LL p_value = ouf.readLong();
+    // Discard the output file contents
+    for (int i = 1; i <= K; i++) ouf.readInt();
 
     //if (j_value != p_value) {
     //    quitf(_wa, "expected %lld, found %lld", p_value, j_value);
