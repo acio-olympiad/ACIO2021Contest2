@@ -1,4 +1,5 @@
 #include <iostream>
+#include <set>
 #include <map>
 #include <vector>
 #include <set>
@@ -37,10 +38,10 @@ vector<int> crits;
 // Make K stabs in [1, N]
 pair<int,int> dp(long long int curN, long long int curK) {
     if(curK == 0) {
-        return {0, -42};
+        return {0, 1};
     }
     if(curN == 0) {
-        return {-INF, -42};
+        return {0, 1};
     }
     if(cache.find({curN, curK}) == cache.end()) {
         pair<int, int> best{-INF, -1};
@@ -72,13 +73,28 @@ int main() {
         crits.push_back(v[i].l);
         crits.push_back(v[i].r);
     }
+    crits.push_back(1);
     auto best = dp(1e9, K);
     cout << best.first << "\n";
+<<<<<<< HEAD
+    multiset<long long int> stabbies;
+    while(K) {
+        stabbies.insert(best.second);
+        //cerr << best.first << " " << best.second << "\n";
+        //best = cache[{best.second-1, --K}];
+        best = dp(best.second-1, --K);
+    }
+    for(long long int x: stabbies) {
+        cout << x << " ";
+    }
+
+=======
     set<int> ord;
     while(K) {
         ord.insert(best.second);
         best = cache[{best.second-1, --K}];
     }
     for (int x : ord) cout << x << " ";
+>>>>>>> 53a5e2ac73ef8cee837603501b44977821a2f360
     cout << "\n";
 }
