@@ -32,7 +32,7 @@ public:
         }
     }
 
-    void upd(int val, int lo, int hi, int l, int r, int cur) {
+    void upd(long long val, int lo, int hi, int l, int r, int cur) {
         pushdown(cur, l != r);
         if (lo > r || hi < l) {return;}
         if (lo <= l && hi >= r) {
