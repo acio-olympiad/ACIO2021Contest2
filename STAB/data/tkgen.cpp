@@ -46,7 +46,7 @@ int main() {
     int n,k,a,l,K, seed;
     cin >> n >> k >> a >> l >> K >> seed;
     int lo = 1, hi = k;
-    printf("%d %d\n",n*l,k);
+    printf("%d %d\n",n*l,K);
     for (int i=1; i<=l; i++) {
         for (int j=1; j <= n; j++) {
             int x = rng(lo,hi),y=rng(lo,hi), p=rng(1,MAXP);

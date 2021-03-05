@@ -32,6 +32,7 @@ In all,
 
 +1 min case + 2 samples = 87 cases
 """
+maxK = 50
 import random, os
 Cases=[]
 
@@ -42,28 +43,28 @@ def SB1():
     #min case
     addcase(1,1,69,1,1,1)
 
-    MAXN = 2*10**5
+    MAXN = 10**5
     #random cases
     for i in range(6):
         x = random.randint(300,600)
-        addcase(x, 1,1000,MAXN//x,random.randint(1,100),1)
+        addcase(x, 1,1000,MAXN//x,random.randint(1,maxK),1)
 
 
 def SB2():
     MAXN = 300
     for i in range(12):
         x = random.randint(10,20)
-        addcase(x, 20, random.randint(6,15),MAXN//x, random.randint(5,100),2)
+        addcase(x, 20, random.randint(6,15),MAXN//x, random.randint(5,maxK),2)
 
 def SB3():
     MAXN = 300
     for i in range(12):
         x = random.randint(10,20)
-        addcase(x, 100000, random.randint(100000//3, 150000),MAXN//x, random.randint(5,100),3)
+        addcase(x, 100000, random.randint(100000//3, 150000),MAXN//x, random.randint(5,maxK),3)
 
 def SB4():
     #K = 1
-    MAXN = 2*10**5
+    MAXN = 10**5
     for i in range(3):
         #1 group
         addcase(MAXN, 10**9, 69, 1, 1,4)
@@ -80,7 +81,7 @@ def SB4():
 
 def SB5():
     #K = 2
-    MAXN = 2*10**5
+    MAXN = 10**5
     for i in range(3):
         #1 group
         addcase(MAXN, 10**9, 69, 1, 2,5)
@@ -96,7 +97,7 @@ def SB5():
         addcase(MAXN//grp, 10**5, 10**5+1, grp, 2,5)
 
 def SB6():
-    MAXN = 2*10**5
+    MAXN = 10**5
     k = 10**5 #size of one group
     for i in range(5):
         for gtype in [0,1]: #0 means medium number of groups, 1 means large
@@ -114,7 +115,7 @@ def SB6():
                     phase = random.randint(33333,50000)
                 else:
                     phase = random.randint(90000,15*10**4)
-                addcase(num_per_group, length, phase, MAXN//num_per_group, random.randint(5,100),6)
+                addcase(num_per_group, length, phase, MAXN//num_per_group, random.randint(5,maxK),6)
  
 def make():
     FILE_NAME="stab"
