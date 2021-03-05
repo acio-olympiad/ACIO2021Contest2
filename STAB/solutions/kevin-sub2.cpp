@@ -14,7 +14,7 @@ struct range {
 
 vector<range> v;
 
-map<pair<int, int>, pair<int, int>> cache;
+map<pair<long long int, long long int>, pair<long long int, long long int>> cache;
 
 bool stabbed(range r, long long int x) {
     return r.l <= x && x <= r.r;
@@ -33,10 +33,10 @@ long long int value(long long int stab, long long int lim) {
 }
 
 // Critical points for "coord compression"
-vector<int> crits;
+vector<long long int> crits;
 
 // Make K stabs in [1, N]
-pair<int,int> dp(long long int curN, long long int curK) {
+pair<long long int, long long int> dp(long long int curN, long long int curK) {
     if(curK == 0) {
         return {0, 1};
     }
@@ -44,7 +44,7 @@ pair<int,int> dp(long long int curN, long long int curK) {
         return {0, 1};
     }
     if(cache.find({curN, curK}) == cache.end()) {
-        pair<int, int> best{-INF, -1};
+        pair<long long int, long long int> best{-INF, -1};
         //for(long long int i = 1; i <= curN; i++) {
         for(auto c: crits) {
             if(c > curN) {
@@ -58,7 +58,7 @@ pair<int,int> dp(long long int curN, long long int curK) {
             best = max(best, cur);
         }
         cache[{curN, curK}] = best;
-        //cerr << "We're at " << curN << " " << curK << " = " << best.first << " " << best.second << "\n";
+        cerr << "We're at " << curN << " " << curK << " = " << best.first << " " << best.second << "\n";
     }
 
     return cache[{curN, curK}];
