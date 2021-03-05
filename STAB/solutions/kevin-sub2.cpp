@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <set>
 
 using namespace std;
 
@@ -73,9 +74,11 @@ int main() {
     }
     auto best = dp(1e9, K);
     cout << best.first << "\n";
+    set<int> ord;
     while(K) {
-        cout << best.second << " ";
+        ord.insert(best.second);
         best = cache[{best.second-1, --K}];
     }
+    for (int x : ord) cout << x << " ";
     cout << "\n";
 }

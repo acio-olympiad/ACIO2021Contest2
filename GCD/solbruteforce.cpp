@@ -22,7 +22,6 @@ LL slv() {
 }
 
 int main() {
-    freopen("gcd.in","r",stdin);
     scanf("%d %d",&N,&Q);
     for (int i=1; i<=N; i++) {
         scanf("%lld", &arr[i]);

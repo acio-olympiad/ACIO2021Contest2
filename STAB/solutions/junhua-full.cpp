@@ -72,7 +72,6 @@ LL dp[MAXN * 2][MAXK];
 int opt[MAXN * 2][MAXK];
 
 int main() {
-    freopen("sample.txt","r",stdin);
     scanf("%d %d",&N,&K);
     for (int i=1; i<=N; i++) {
         scanf("%d %d %d",&S[i][0], &S[i][1], &S[i][2]); //l r p

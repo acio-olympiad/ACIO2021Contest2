@@ -77,8 +77,6 @@ void build(int l, int r, int cur) {
 }
 
 int main() {
-    freopen("gcd.in","r",stdin);
-    freopen("gcd.out","w",stdout);
     scanf("%d %d",&N,&Q);
     for (int i=1; i<=N; i++) {
         scanf("%lld", &A[i]);

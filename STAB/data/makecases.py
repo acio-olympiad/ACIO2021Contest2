@@ -32,8 +32,9 @@ In all,
 
 +1 min case + 2 samples = 87 cases
 """
-maxK = 50
+maxK = 20
 import random, os
+random.seed(389472591)
 Cases=[]
 random.seed(12342056769789666)
 def addcase(n,k,a,l,K,sb):
@@ -126,9 +127,9 @@ def make():
         l.write(" ".join([str(c) for c in i[:-1]]))
         l.close()
         print("Generating",i)
-        os.system(".\Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[-1]),str(SB_COUNT[i[-1]])))
+        os.system("./Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[-1]),str(SB_COUNT[i[-1]])))
         SB_COUNT[i[-1]]+=1
-        print(".\Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[-1]),str(SB_COUNT[i[-1]])))
+        print("./Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[-1]),str(SB_COUNT[i[-1]])))
 
 SB1()
 SB2()

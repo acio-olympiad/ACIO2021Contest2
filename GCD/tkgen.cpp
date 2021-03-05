@@ -26,7 +26,7 @@ int gen(int t) {
     }
 }
 int main() {
-    int n,t,s; //n, type of generation, subtask
+    int n,t,s,seed; //n, type of generation, subtask
     /* t = 1: powers of 2
        t = 2: powers of 2 3 5
        t = 3: arbitary
