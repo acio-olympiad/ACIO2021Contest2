@@ -31,7 +31,8 @@ int main() {
        t = 2: powers of 2 3 5
        t = 3: arbitary
     */
-    cin >> n >> t >> s;
+    cin >> n >> t >> s >> seed;
+    srand(seed);
     int q = s == 5 ? 10000 : 0;
     printf("%d %d\n",n,q);
     for (int i=1; i<=n; i++) {

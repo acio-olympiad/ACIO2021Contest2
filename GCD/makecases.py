@@ -1,8 +1,9 @@
-import os
+import os, random
 Cases=[]
 FILE_NAME="game" #game1-1.in = sub 1 of case 1
+random.seed(12342056769789666)
 def addcase(n,t,s):
-    Cases.append([n,t,s])
+    Cases.append([n,t,s,random.randint(0,69696969)])
 
 def SB1():
     addcase(2,1,1)
@@ -36,7 +37,7 @@ def make():
         l.write("{} {} {}".format(i[0],i[1],i[2]))
         l.close()
         print("Generating",i)
-        os.system("./Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[2]),str(SB_COUNT[i[2]])))
+        os.system(".\Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[2]),str(SB_COUNT[i[2]])))
         SB_COUNT[i[2]]+=1
 SB1()
 SB2()

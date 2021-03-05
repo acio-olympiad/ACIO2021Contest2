@@ -35,7 +35,7 @@ In all,
 maxK = 50
 import random, os
 Cases=[]
-
+random.seed(12342056769789666)
 def addcase(n,k,a,l,K,sb):
     Cases.append([n,k,a,l,K,random.randint(0,69696969),sb])
 

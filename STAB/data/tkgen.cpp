@@ -45,6 +45,7 @@ int main() {
     //read n k a l K
     int n,k,a,l,K, seed;
     cin >> n >> k >> a >> l >> K >> seed;
+    srand(seed);
     int lo = 1, hi = k;
     printf("%d %d\n",n*l,K);
     for (int i=1; i<=l; i++) {
