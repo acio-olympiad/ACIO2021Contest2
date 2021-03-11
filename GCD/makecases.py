@@ -34,7 +34,7 @@ def make():
     SB_COUNT=[0]*6
     for i in Cases:
         l=open("tmp.txt",'w')
-        l.write("{} {} {}".format(i[0],i[1],i[2]))
+        l.write("{} {} {} {}".format(i[0],i[1],i[2],i[3]))
         l.close()
         print("Generating",i)
         os.system("./Tkgen <tmp.txt >{}{}-{}.in".format(FILE_NAME,str(i[2]),str(SB_COUNT[i[2]])))

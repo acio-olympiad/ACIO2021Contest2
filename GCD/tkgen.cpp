@@ -1,6 +1,7 @@
 #include<iostream>
 #include<time.h>
 #include<set>
+#include <cassert>
 #include<utility>
 using namespace std;
 
@@ -22,7 +23,7 @@ int gen(int t) {
         }
         return(val);
     } else if (t == 3) {
-        return rand()%maxV;
+        return (rand()%maxV) + 1;
     }
 }
 int main() {
@@ -36,7 +37,9 @@ int main() {
     int q = s == 5 ? 10000 : 0;
     printf("%d %d\n",n,q);
     for (int i=1; i<=n; i++) {
-        printf("%d", gen(t));
+        int val = gen(t);
+        assert(val > 0);
+        printf("%d", val);
         if (i < n) {printf(" ");}
         else {printf("\n");}
     }

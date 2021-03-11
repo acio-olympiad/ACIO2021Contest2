@@ -41,8 +41,13 @@ for _ in range(80):
 
 
 random.shuffle(conds)
-print(N, len(edges), len(conds))
+rip = 0
+for c in conds:
+    if c[2] == 0:
+        rip += 1
+print(N, len(edges), len(conds) - rip)
 for e in edges:
     print(*e)
 for c in conds:
-    print(*c)
+    if c[2] != 0:
+        print(*c)

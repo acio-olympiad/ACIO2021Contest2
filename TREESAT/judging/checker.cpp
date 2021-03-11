@@ -64,11 +64,9 @@ int main(int argc, char **argv) {
     
     for (int i = 0; i < K; i++) {
         if (t[i] == 1 && use[a[i]] != use[b[i]]) {
-            printf("%d\n", i);
             quit(_wa, "Input does not satisfy constraints.");
         }
         if (t[i] == 2 && use[a[i]] && use[b[i]]) {
-            printf("%d\n", i);
             quit(_wa, "Input does not satisfy constraints.");
         }
     }
